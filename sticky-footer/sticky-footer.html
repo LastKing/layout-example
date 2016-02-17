@@ -3,8 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+        html, body, #wrap {
+            height: 100%;
+        }
+
+        body > #wrap {
+            height: auto;
+            min-height: 100%;
+        }
+
+        #main {
+            padding-bottom: 50px;
+        }
+
+        /* 必须使用和footer相同的高度 */
+        #footer {
+            position: relative;
+            margin-top: -50px; /* footer高度的负值 */
+            height: 50px;
+            clear: both;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            display: inline-block;
+        }
+
+        /* Hides from IE-mac \*/
+        * html .clearfix {
+            height: 1%;
+        }
+
+        .clearfix {
+            display: block;
+        }
+        /* End hide from IE-mac */
+    </style>
 </head>
 <body>
+
+<div id="wrap">
+    <div id="main" class="clearfix">
+        <div id="content">
+            <a href="https://paran.io/css-sticky-footer/">出处</a>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+            <div>photo</div>
+        </div>
+        <div id="side">
+            fda
+        </div>
+    </div>
+</div>
+<div id="footer">
+    fsafd
+</div>
 
 </body>
 </html>
