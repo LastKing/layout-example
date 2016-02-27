@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法三：footer高度任意+js</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffe4c4;
+        }
+
+        main {
+            background-color: #bdb76b;
+        }
+
+        footer {
+            background-color: #ffc0cb;
+        }
+
+        /* 动态为footer添加类fixed-bottom */
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+
+<header>header</header>
+<main>main content</main>
+<footer>footer</footer>
+
+<script src="//cdnjscn.b0.upaiyun.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        function footerPosition() {
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                    winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if (!(contentHeight > winHeight)) {
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+</script>
+
+</body>
+</html>
