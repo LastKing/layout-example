@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>step1</title>
+    <style>
+        #fader {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            width: 500px
+        }
+
+        #fader li {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="fader">
+    <ul>
+        <li><img src="./1.jpg" style="width:100%" alt="我是图片一"/></li>
+        <li><img src="./2.jpg" style="width:100%" alt="哈哈，图片二"/></li>
+    </ul>
+</div>
+
+<script src="../../jquery-1.11.1.min.js"></script>
+<script src="./test.js"></script>
+<script>
+    carousel.fader.init({
+        id: 'fader'
+    });
+</script>
+</body>
+</html>
