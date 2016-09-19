@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> javascript焦点图轮播代码实例详解 </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap{
+            height: 170px;
+            width: 490px;
+            position: relative;
+            margin: 100px auto;
+        }
+        ul li img{
+            width: 490px;
+            height: 170px;
+        }
+        .wrap ol{
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+        }
+        .wrap ol li{
+            height: 20px;
+            width:20px;
+            background-color: #ccc;
+            border: solid #666 1px;
+            margin-left: 5px;
+            color: #000;
+            float: left;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wrap ol .on{
+            background-color: #e97305;
+            color: #fff;
+        }
+        .clearfix:before,.clearfix:after{
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <ul id="pic">
+        <li><img src="img/Lone.jpg" alt="Lone"></li>
+        <li><img src="img/Ltwo.jpg" alt="Ltwo" style="display:none;"></li>
+        <li><img src="img/Lthree.jpg" alt="Lthree" style="display:none;"></li>
+        <li><img src="img/Lfour.jpg" alt="Lfour" style="display:none;"></li>
+        <li><img src="img/Lfive.jpg" alt="Lfive" style="display:none;"></li>
+    </ul>
+    <ol id="list" class="clearfix">
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ol>
+</div>
+<script>
+    window.onload=function(){
+        var pic=document.getElementById('pic').getElementsByTagName('li');
+        var list=document.getElementById('list').getElementsByTagName('li');
+        var index=0;
+        var timer=null;
+
+        for (var x = 0; x < pic.length; x++) {
+            list[x].id=x;
+            pic[x].id=x;
+            list[x].onmouseover=function(){
+                clearInterval(timer);
+                changeImg(this.id);
+            }
+            list[x].onmouseout=function(){
+                index=this.id;
+                autoChange(index);
+            }
+            document.getElementById('pic').onmouseout=function(){
+                autoChange(index);
+            }
+            document.getElementById('pic').onmouseover=function(){
+                clearInterval(timer);
+            }
+        }
+        autoChange(index);
+        function changeImg(id){
+            for (var j = 0; j < list.length; j++) {
+                list[j].className="";
+                pic[j].style.display="none";
+            }
+            list[id].className="on";
+            pic[id].style.display="block";
+        }
+        function autoChange(index){
+            timer=setInterval(function(){
+                index++;
+                if(index>=pic.length){
+                    index=0;
+                };
+                changeImg(index);
+            },1000)
+        }
+    }
+</script>
+</body>
+</html>
