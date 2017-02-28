@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="description" content="http://www.51xuediannao.com/html+css/htmlcssjq/display_flex.html"/>
+    <style>
+        .flex-example {
+            /*justify-content: space-between; !*主轴对齐 （横竖都要可能，根据flex-direction）*!*/
+            /*align-items: center; !*属性定义项目在交叉轴上如何对齐*!*/
+            align-content: flex-end;
+        }
+
+        .flex-example div {
+            border: #fff solid 1px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- flex-flow: row nowrap initial inherit（默认值） 为复合属性;
+ 由 flex-direction , flex-wrap , initial , inherit 4项组成-->
+
+<!--<div style="width:400px;height:120px;background:#ddd; display:flex;flex-direction: row;flex-wrap: wrap-reverse">-->
+<div style="width:800px;height:120px;background:#ddd; display:flex;flex-flow:row;" class="flex-example">
+
+    <div>jquery特效</div>
+    <div>
+        <a href="http://www.51xuediannao.com/xiaochengxu/">微信小程序开发</a>
+    </div>
+    <div style="align-self:center;">
+        <a href="http://www.51xuediannao.com/">web前端开发</a>
+    </div>
+</div>
+
+<div style="width:100%;display: flex;flex-flow:row;">
+
+    <div style="order:0;flex-grow:1;">
+        <h2>display flex容器的属性</h2>
+        <ul>
+            <li>flex-direction</li>
+            <li>flex-wrap</li>
+            <li>flex-flow</li>
+            <li>justify-content</li>
+            <li>align-items</li>
+            <li>align-content</li>
+        </ul>
+    </div>
+
+    <div style="order:23;flex-grow:1;">
+
+    </div>
+
+    <div style="order:32;flex-grow:1;">
+        <h3>项目的属性</h3>
+
+        以下6个属性设置在项目上。
+        <ul>
+            <li>order: 属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</li>
+            <li>flex-grow: 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</li>
+            <li>flex-shrink: 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</li>
+            <li>flex-basis: 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。</li>
+            <li>flex: 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto</li>
+            <li>align-self: 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性</li>
+        </ul>
+    </div>
+
+</div>
+
+
+</body>
+</html>
