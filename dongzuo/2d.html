@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>http://www.w3school.com.cn/css3/css3_2dtransform.asp</title>
+    <style>
+        .test {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 50px;
+        }
+
+        .t1 {
+            transform: rotate(30deg);
+        }
+
+        .t2 {
+            transform: translate(50px, -20px);
+        }
+
+        .t3 {
+            transform: scale(2, 4); /*值 scale(2,4) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍。*/
+        }
+
+        .t4 {
+            transform: skew(10deg, 10deg);
+        }
+
+        .max {
+            transform: matrix(0.866, 0.5, -0.5, 0.866, 0, 0)
+        }
+    </style>
+</head>
+<body>
+
+<div class="test t1"> 翻转</div>
+
+<div class="test t2"> 位移</div>
+
+<div class="test t3"> 调整宽度和高度</div>
+
+<div class="test t4"> 翻转</div>
+
+<div class="test max"> 总的</div>
+
+</body>
+</html>
